@@ -14,8 +14,10 @@ def main():
 def get_password(min_length):
     password = input("Create a password: ")
     while len(password) < min_length:
+        print(f"Password must be > {min_length} characters")
         password = input("Create a password: ")
     return password
 
 
-main()
+if __name__ == "__main__":
+    main()

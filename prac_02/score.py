@@ -25,4 +25,5 @@ def get_result(score):
         return "Invalid score"
 
 
-main()
+if __name__ == "__main__":
+    main()
