@@ -1,6 +1,6 @@
 """
 CP1404 Practical 2
-Program to do something
+Program to get input and print *'s
 """
 
 
