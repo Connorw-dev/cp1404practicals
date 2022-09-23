@@ -1,7 +1,8 @@
 """
-CP1404 Practical 2
+CP1404 | prac_02 | gopher_pop_simulator
 Program to simulate a gopher population
 """
+
 from random import uniform
 
 

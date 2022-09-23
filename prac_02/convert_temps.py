@@ -1,5 +1,5 @@
 """
-CP1404 Practical 2
+CP1404 | prac_02 | convert_temps
 Program to convert multiple temperatures from text file
 """
 
@@ -17,13 +17,7 @@ def main():
 
 
 def create_random_text(count, min_value, max_value):
-    """
-    Create a random temps_input.txt file
-    :param count: how many random temps?
-    :param min_value: minimum temp value
-    :param max_value: maximum temp value
-    :return:
-    """
+    """ Create temps_input.txt with random floats """
     with open("temps_input.txt", "w") as temps_file:
         for _ in range(count):
             temps_file.write(f"{uniform(min_value, max_value)}\n")

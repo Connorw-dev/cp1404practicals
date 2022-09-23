@@ -1,5 +1,5 @@
 """
-CP1404 Practical 2
+CP1404 | prac_02 | temperatures
 Program to convert between celsius and fahrenheit.
 """
 
@@ -28,20 +28,14 @@ def main():
 
 
 def get_fahrenheit(celsius):
-    """
-    Convert celsius to fahrenheit
-    :param celsius: degrees C
-    :return: degrees F
-    """
+    """ Convert celsius to fahrenheit """
+
     return celsius * 9.0 / 5 + 32
 
 
 def get_celsius(fahrenheit):
-    """
-    Convert fahrenheit to celsius
-    :param fahrenheit: degrees F
-    :return: degrees C
-    """
+    """ Convert fahrenheit to celsius """
+
     return 5 / 9 * (fahrenheit - 32)
 
 

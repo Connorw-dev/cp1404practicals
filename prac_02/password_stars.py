@@ -1,5 +1,5 @@
 """
-CP1404Practical 2
+CP1404 | prac_02 | password_stars
 Program to get input and print *'s
 """
 

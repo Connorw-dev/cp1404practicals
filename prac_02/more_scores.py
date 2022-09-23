@@ -1,5 +1,5 @@
 """
-CP1404 Practical 2
+CP1404 | prac_02 | more_scores
 Program to grade multiple random scores
 """
 

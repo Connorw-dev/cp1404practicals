@@ -1,5 +1,5 @@
 """
-CP1404 Practical 2
+CP1404 | prac_02 | score_menu
 Program to process inputted score with a menu
 """
 
@@ -26,10 +26,8 @@ def main():
 
 
 def get_choice():
-    """
-    Print the menu and get input
-    :return: choice as str format
-    """
+    """ Print the menu and get user input """
+
     menu = """ 
 (1) Enter score
 (2) Print result
