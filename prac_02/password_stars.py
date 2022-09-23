@@ -1,5 +1,5 @@
 """
-CP1404 Practical 2
+CP1404Practical 2
 Program to get input and print *'s
 """
 
@@ -11,11 +11,7 @@ def main():
 
 
 def get_password(min_length):
-    """
-    Get a valid password from user
-    :param min_length: minimum required characters in password
-    :return: password
-    """
+    """Get a valid password from user. """
     password = input("Create a password: ")
     while len(password) < min_length:
         print(f"Password must be > {min_length} characters")
