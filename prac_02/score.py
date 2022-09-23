@@ -2,6 +2,7 @@
 CP1404 | prac_02 | score
 Program to determine grade from inputted score and random score.
 """
+
 from random import randint
 
 

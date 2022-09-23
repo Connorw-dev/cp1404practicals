@@ -3,7 +3,6 @@ CP1404 | prac_02 | temperatures
 Program to convert between celsius and fahrenheit.
 """
 
-
 MENU = """
 (C) Convert Celsius to Fahrenheit
 (F) Convert Fahrenheit to Celsius

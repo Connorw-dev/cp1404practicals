@@ -16,7 +16,7 @@ MENU = """
 
 def main():
     choice = input(MENU)
-    score = -1
+    score = -1  # To detect if score hasn't been inputted yet
     while choice != "4":
         if choice == "1":
             score = get_score()
