@@ -5,6 +5,13 @@ Program to process inputted score with a menu
 
 from prac_02.score import get_result
 
+MENU = """ 
+(1) Enter score
+(2) Print result
+(3) Print Stars
+(4) Quit
+"""
+
 
 def main():
     choice = get_choice()
@@ -28,13 +35,7 @@ def main():
 def get_choice():
     """ Print the menu and get user input """
 
-    menu = """ 
-(1) Enter score
-(2) Print result
-(3) Print Stars
-(4) Quit
-"""
-    print(menu)
+    print(MENU)
     return input(">> ")
 
 
