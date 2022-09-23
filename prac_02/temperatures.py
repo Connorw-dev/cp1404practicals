@@ -10,6 +10,8 @@ MENU = """
 (Q) Quit
 >> 
 """
+
+
 def main():
 
     choice = input(MENU).upper()
@@ -31,13 +33,11 @@ def main():
 
 def get_fahrenheit(celsius):
     """ Convert celsius to fahrenheit """
-
     return celsius * 9.0 / 5 + 32
 
 
 def get_celsius(fahrenheit):
     """ Convert fahrenheit to celsius """
-
     return 5 / 9 * (fahrenheit - 32)
 
 

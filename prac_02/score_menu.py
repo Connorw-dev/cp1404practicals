@@ -39,12 +39,12 @@ def get_score():
 
 
 def print_result(score):
-    """ Print the grade based on score """
+    """ Print grade based on score """
     print(get_result(score))
 
 
 def print_stars(score):
-    """ Print number of * equal to score """
+    """ Print number of *'s equal to score """
     if score != -1:
         print("*" * int(score))
     else:

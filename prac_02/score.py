@@ -15,7 +15,7 @@ def main():
 
 
 def get_result(score):
-    """ Return a grade based on score """
+    """ Return grade based on score """
     if score >= 90:
         return "Excellent"
     elif score >= 50:
