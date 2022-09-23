@@ -4,12 +4,15 @@ Program to convert between celsius and fahrenheit.
 """
 
 
+MENU = """
+(C) Convert Celsius to Fahrenheit
+(F) Convert Fahrenheit to Celsius
+(Q) Quit
+>> 
+"""
 def main():
-    menu = """C - Convert Celsius to Fahrenheit
-    F - Convert Fahrenheit to Celsius
-    Q - Quit"""
-    print(menu)
-    choice = input(">>> ").upper()
+
+    choice = input(MENU).upper()
     while choice != "Q":
         if choice == "C":
             celsius = float(input("Celsius: "))
@@ -22,8 +25,7 @@ def main():
 
         else:
             print("Invalid option")
-        print(menu)
-        choice = input(">>> ").upper()
+        choice = input(MENU).upper()
     print("Thank you.")
 
 
