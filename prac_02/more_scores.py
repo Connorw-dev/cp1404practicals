@@ -11,7 +11,7 @@ def main():
     num_of_scores = int(input("Number of scores: "))
     scores = [randint(0, 100) for _ in range(num_of_scores)]
     results = [get_result(score) for score in scores]
-    with open("result.txt", "w") as result_file:
+    with open("score_result.txt", "w") as result_file:
         for idx, score in enumerate(scores):
             result_file.write(f"{score} is {results[idx]}\n")
 
