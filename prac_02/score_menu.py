@@ -1,3 +1,8 @@
+"""
+CP1404 Practical 2
+Program to process inputted score with a menu
+"""
+
 from prac_02.score import get_result
 
 
@@ -21,6 +26,10 @@ def main():
 
 
 def get_choice():
+    """
+    Print the menu and get input
+    :return: choice as str format
+    """
     menu = """ 
 (1) Enter score
 (2) Print result
@@ -33,4 +42,3 @@ def get_choice():
 
 if __name__ == "__main__":
     main()
-

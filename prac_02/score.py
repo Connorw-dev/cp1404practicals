@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 - Practical
+CP1404 Practical 2
 Program to determine score status.
 """
 from random import randint
@@ -15,6 +15,11 @@ def main():
 
 
 def get_result(score):
+    """
+    Grade a score
+    :param score: Any float value
+    :return: grade in str format
+    """
     if score >= 90:
         return "Excellent"
     elif score >= 50:

@@ -1,6 +1,6 @@
 """
-CP1404/CP5632 - Practical
-Pseudocode for temperature conversion
+CP1404 Practical 2
+Program to convert between celsius and fahrenheit.
 """
 
 
@@ -28,10 +28,20 @@ def main():
 
 
 def get_fahrenheit(celsius):
+    """
+    Convert celsius to fahrenheit
+    :param celsius: degrees C
+    :return: degrees F
+    """
     return celsius * 9.0 / 5 + 32
 
 
 def get_celsius(fahrenheit):
+    """
+    Convert fahrenheit to celsius
+    :param fahrenheit: degrees F
+    :return: degrees C
+    """
     return 5 / 9 * (fahrenheit - 32)
 
 
