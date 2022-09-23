@@ -18,25 +18,40 @@ def main():
     score = -1
     while choice != "4":
         if choice == "1":
-            score = float(input("Enter score: "))
-            while not 0 <= score <= 100:
-                print("Score must be between 0 and 100")
-                score = float(input("Enter score: "))
+            score = get_score()
         elif choice == "2":
-            print(get_result(score))
+            print_result(score)
         elif choice == "3":
-            if score != -1:
-                print("*" * int(score))
-            else:
-                print("Invalid score")
+            print_stars(score)
         choice = get_choice()
 
 
 def get_choice():
     """ Print the menu and get user input """
-
     print(MENU)
     return input(">> ")
+
+
+def get_score():
+    """ Get score from user """
+    score = float(input("Enter score: "))
+    while not 0 <= score <= 100:
+        print("Score must be between 0 and 100")
+        score = float(input("Enter score: "))
+    return score
+
+
+def print_result(score):
+    """ Print the grade based on score """
+    print(get_result(score))
+
+
+def print_stars(score):
+    """ Print number of * equal to score """
+    if score != -1:
+        print("*" * int(score))
+    else:
+        print("Invalid score")
 
 
 if __name__ == "__main__":
