@@ -4,7 +4,7 @@ Program to convert multiple temperatures from text file
 """
 
 from prac_02.temperatures import get_celsius
-from random import random
+from random import uniform
 
 
 def main():
@@ -26,7 +26,7 @@ def create_random_text(count, min_value, max_value):
     """
     with open("temps_input.txt", "w") as temps_file:
         for _ in range(count):
-            temps_file.write(f"{random() * (max_value - min_value) + min_value}\n")
+            temps_file.write(f"{uniform(min_value, max_value)}\n")
 
 
 if __name__ == "__main__":
