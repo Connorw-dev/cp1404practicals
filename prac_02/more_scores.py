@@ -8,12 +8,15 @@ from random import randint
 
 
 def main():
+    # Get random scores and their grades
     num_of_scores = int(input("Number of scores: "))
     scores = [randint(0, 100) for _ in range(num_of_scores)]
-    results = [get_result(score) for score in scores]
+    grades = [get_result(score) for score in scores]
+
+    # Write to output file
     with open("score_result.txt", "w") as result_file:
         for idx, score in enumerate(scores):
-            result_file.write(f"{score} is {results[idx]}\n")
+            result_file.write(f"{score} is {grades[idx]}\n")
 
 
 if __name__ == "__main__":
