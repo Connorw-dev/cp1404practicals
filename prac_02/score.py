@@ -1,6 +1,6 @@
 """
 CP1404 | prac_02 | score
-Program to determine score status.
+Program to determine grade from inputted score and random score.
 """
 from random import randint
 
@@ -8,7 +8,6 @@ from random import randint
 def main():
     score = float(input("Enter score: "))
     print(get_result(score))
-
     random_score = randint(0, 100)
     print(f"Random score: {random_score}")
     print(get_result(random_score))

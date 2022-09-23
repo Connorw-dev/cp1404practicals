@@ -24,7 +24,6 @@ def main():
             fahrenheit = float(input("Fahrenheit: "))
             celsius = get_celsius(fahrenheit)
             print("Result: {:.2f} C".format(celsius))
-
         else:
             print("Invalid option")
         choice = input(MENU).upper()

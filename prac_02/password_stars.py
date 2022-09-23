@@ -11,7 +11,7 @@ def main():
 
 
 def get_password(min_length):
-    """Get valid password from user. """
+    """Get valid password """
     password = input("Create a password: ")
     while len(password) < min_length:
         print(f"Password must be > {min_length} characters")

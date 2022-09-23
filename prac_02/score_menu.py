@@ -30,7 +30,7 @@ def main():
 
 
 def get_score():
-    """ Get score from user """
+    """ Get valid score """
     score = float(input("Enter score: "))
     while not 0 <= score <= 100:
         print("Score must be between 0 and 100")
