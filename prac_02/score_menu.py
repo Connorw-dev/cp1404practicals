@@ -10,11 +10,12 @@ MENU = """
 (2) Print result
 (3) Print Stars
 (4) Quit
+>>> 
 """
 
 
 def main():
-    choice = get_choice()
+    choice = input(MENU)
     score = -1
     while choice != "4":
         if choice == "1":
@@ -23,13 +24,9 @@ def main():
             print_result(score)
         elif choice == "3":
             print_stars(score)
-        choice = get_choice()
-
-
-def get_choice():
-    """ Print the menu and get user input """
-    print(MENU)
-    return input(">> ")
+        else:
+            print("Invalid choice")
+        choice = input(MENU)
 
 
 def get_score():
