@@ -15,4 +15,6 @@ with open(NAME_FILE, "r") as name_file:
 
 with open(NUMBERS_FILE, "r") as numbers_file:
     lines = numbers_file.readlines()
-    print(lines)
+
+    result = int(lines[0].strip()) + int(lines[1].strip())
+    print(f"Sum of first two numbers: {result:,}")
