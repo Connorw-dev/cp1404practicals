@@ -2,6 +2,7 @@
 CP1404/CP5632 - Practical
 Experiment with reading files
 """
+
 NAME_FILE = "names.txt"
 NUMBERS_FILE = "numbers.txt"
 
