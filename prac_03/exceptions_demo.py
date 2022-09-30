@@ -22,4 +22,3 @@ print("Finished.")
 
 # ValueError occurs when the input cannot be converted to int. eg. numerator = "yes"
 # ZeroDivisionError occurs when denominator is 0
-
