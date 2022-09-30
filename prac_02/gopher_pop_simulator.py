@@ -3,7 +3,7 @@ CP1404 | prac_02 | gopher_pop_simulator
 Program to simulate a gopher population
 """
 
-from random import uniform
+import random
 
 
 def main():
@@ -17,8 +17,8 @@ def main():
 
 def update_gopher_pop(population, deathrate_min_max: tuple, birthrate_min_max: tuple):
     """Updates and prints the gopher population with deaths and births"""
-    deaths = int(population * uniform(*deathrate_min_max))
-    births = int(population * uniform(*birthrate_min_max))
+    deaths = int(population * random.uniform(*deathrate_min_max))
+    births = int(population * random.uniform(*birthrate_min_max))
     population -= deaths
     population += births
     print(f"{births} gophers were born. {deaths} gophers died.")
