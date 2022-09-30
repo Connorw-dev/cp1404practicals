@@ -1,6 +1,8 @@
 """
 CP1404/CP5632 - Practical 3
+Experiment with random
 """
+
 import random
 
 # Question 1: 5, 19
