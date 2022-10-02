@@ -36,6 +36,9 @@ def is_valid_password(password):
     count_upper = 0
     count_digit = 0
     count_special = 0
+
+    """
+    # Solution 1
     for char in password:
         if char.islower():
             count_lower += 1
@@ -45,6 +48,14 @@ def is_valid_password(password):
             count_digit += 1
         elif char in SPECIAL_CHARACTERS:
             count_special += 1
+    """
+
+    # Solution 2
+    for char in password:
+        count_lower += char.islower()
+        count_upper += char.isupper()
+        count_digit += char.isdigit()
+        count_special += char in SPECIAL_CHARACTERS
 
     if not (count_lower and count_upper and count_digit):
         return False
