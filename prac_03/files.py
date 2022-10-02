@@ -3,25 +3,25 @@ CP1404/CP5632 - Practical
 Experiment with reading files
 """
 
-NAME_FILE = "names.txt"
-NUMBERS_FILE = "numbers.txt"
-
+# Program 1
 name = input("Name: ")
-
-with open(NAME_FILE, "w") as name_file:
+with open("names.txt", "w") as name_file:
     print(name, file=name_file)
 
-with open(NAME_FILE, "r") as name_file:
-    print(f"Your name is {name_file.read()}")
+# Program 2
+with open("names.txt", "r") as name_file:
+    name = name_file.read().strip()
+print(f"Your name is {name}")
 
-with open(NUMBERS_FILE, "r") as numbers_file:
+# Program 3
+with open("numbers.txt", "r") as numbers_file:
     lines = numbers_file.readlines()
+result = int(lines[0]) + int(lines[1])
+print(f"Sum of first two numbers: {result:,}")
 
-    result = int(lines[0].strip()) + int(lines[1].strip())
-    print(f"Sum of first two numbers: {result:,}")
-
-with open(NUMBERS_FILE, "r") as numbers_file:
+# Program 4
+with open("numbers.txt", "r") as numbers_file:
     sum = 0
     for line in numbers_file:
         sum += int(line.strip())
-    print(f"Sum of all numbers: {sum:,}")
+print(f"Sum of all numbers: {sum:,}")
