@@ -24,6 +24,7 @@ def get_data():
 
 
 def print_stats(data):
+    """ Print the stats of classes from data"""
     for class_info in data:
         print(f"{class_info[0]} is taught by {class_info[1]} and has {class_info[2]} students")
 

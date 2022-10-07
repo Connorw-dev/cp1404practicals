@@ -17,6 +17,7 @@ def main():
 
 
 def print_report(incomes):
+    """ Print a formatted Income Report from incomes"""
     month_count = len(incomes)
     print("\nIncome Report\n-------------")
     total = 0

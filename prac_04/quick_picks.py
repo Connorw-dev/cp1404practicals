@@ -8,6 +8,7 @@ LINE_TEMPLATE = "{0:2} {1:2} {2:2} {3:2} {4:2} {5:2}"
 
 
 def main():
+    """ Print n lines, each with 6 unique random numbers from 1-45"""
     quick_pick_count = int(input("Number of quick picks: "))
 
     for _ in range(quick_pick_count):

@@ -9,6 +9,7 @@ USERNAMES = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'B
 
 
 def main():
+    """ Test for username and get stats from inputted numbers"""
     username = input("Username: ")
     if username in USERNAMES:
         print("Access granted")
@@ -20,6 +21,7 @@ def main():
 
 
 def print_stats(numbers):
+    """ Print the stats of a list of numbers"""
     print(f"The first number is: {numbers[0]}")
     print(f"The last number is: {numbers[-1]}")
     print(f"The smallest number is: {min(numbers)}")
