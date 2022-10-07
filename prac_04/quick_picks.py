@@ -4,7 +4,7 @@ Program to display quick pick lines
 """
 import random
 
-TEMPLATE = "{0:2} {1:2} {2:2} {3:2} {4:2} {5:2}"
+LINE_TEMPLATE = "{0:2} {1:2} {2:2} {3:2} {4:2} {5:2}"
 
 
 def main():
@@ -17,7 +17,7 @@ def main():
             if random_num not in quick_picks:
                 quick_picks.append(random_num)
         quick_picks.sort()
-        print(TEMPLATE.format(*quick_picks))
+        print(LINE_TEMPLATE.format(*quick_picks))
 
 
 if __name__ == "__main__":
