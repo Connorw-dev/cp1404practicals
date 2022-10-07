@@ -7,7 +7,7 @@ NUMBER_COUNT = 5
 
 
 def main():
-    numbers = [int(input("Number: ")) for i in range(NUMBER_COUNT)]
+    numbers = [int(input("Number: ")) for _ in range(NUMBER_COUNT)]
     print(f"The first number is: {numbers[0]}")
     print(f"The last number is: {numbers[-1]}")
     print(f"The smallest number is: {min(numbers)}")
