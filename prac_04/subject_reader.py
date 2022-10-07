@@ -8,7 +8,7 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    print(data)
+    print_stats(data)
 
 
 def get_data():
@@ -22,6 +22,10 @@ def get_data():
             data.append(parts)
     return data
 
+
+def print_stats(data):
+    for class_info in data:
+        print(f"{class_info[0]} is taught by {class_info[1]} and has {class_info[2]} students")
 
 
 main()
