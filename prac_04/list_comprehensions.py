@@ -38,5 +38,5 @@ numbers = [int(number_str) for number_str in almost_numbers]
 
 numbers_above_9 = [number for number in numbers if number > 9]
 
-names_str = ", ".join([full_name.split(' ')[1] for full_name in full_names if len(full_name) > 11])
-
+names_str = ", ".join([full_name.split()[1] for full_name in full_names if len(full_name) > 11])
+print(names_str)
