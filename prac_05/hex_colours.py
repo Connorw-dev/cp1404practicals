@@ -14,7 +14,7 @@ COLOUR_TO_HEX = {"Absolute Zero": "#0048ba",
                  "AntiqueWhite1": "#ffefdb",
                  "AntiqueWhite2": "#eedfcc"}
 
-COLOUR_TO_HEX = {k.lower(): v for k, v in COLOUR_TO_HEX.items()}
+COLOUR_TO_HEX = {k.lower(): v for k, v in COLOUR_TO_HEX.items()}  # convert keys to lower
 
 colour = input("Enter colour: ").lower()
 while colour != "":
