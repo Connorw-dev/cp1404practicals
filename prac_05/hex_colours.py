@@ -17,7 +17,7 @@ COLOUR_TO_HEX = {"Absolute Zero": "#0048ba",
 COLOUR_TO_HEX = {k.lower(): v for k, v in COLOUR_TO_HEX.items()}  # convert keys to lower
 
 colour = input("Enter colour: ").lower()
-while colour != "":
+while colour:
     try:
         print(colour, "is", COLOUR_TO_HEX[colour])
     except KeyError:

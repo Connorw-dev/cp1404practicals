@@ -6,15 +6,12 @@ Word occurrences in a string
 
 def main():
     words = input("String: ").split()
-    word_dict = {}
+    word_to_count = {}
     for word in words:
-        if word in word_dict:
-            word_dict[word] += 1
-        else:
-            word_dict[word] = 1
+        word_to_count[word] = word_to_count.get(word, 0) + 1
 
-    max_word_length = max([len(word) for word in word_dict])
-    for word, count in sorted(word_dict.items()):
+    max_word_length = max([len(word) for word in word_to_count])
+    for word, count in sorted(word_to_count.items()):
         print(f"{word:{max_word_length}} : {count}")
 
 
