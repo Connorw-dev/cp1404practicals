@@ -1,6 +1,8 @@
 """CP1404/CP5632 Practical - Guitar class"""
 import datetime
 
+VINTAGE_AGE = 50
+
 
 class Guitar:
 
@@ -19,5 +21,5 @@ class Guitar:
         return datetime.date.today().year - self.year
 
     def is_vintage(self):
-        """ return true if age of guitar >= 50"""
-        return self.get_age() >= 50
+        """ return true if guitar is vintage"""
+        return self.get_age() >= VINTAGE_AGE
