@@ -5,6 +5,7 @@ from prac_06.guitar import Guitar
 
 
 def main():
+    """ Get guitars from user and print them"""
     print("My guitars!")
     guitars = get_guitars()
 
@@ -15,6 +16,7 @@ def main():
 
 
 def get_guitars():
+    """ Get a list of guitars from user"""
     guitars = []
     name = input("Name: ")
     while name:

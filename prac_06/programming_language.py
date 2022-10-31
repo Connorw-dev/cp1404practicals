@@ -5,6 +5,7 @@ class ProgrammingLanguage:
     """ Represent a programming language """
 
     def __init__(self, name, typing, reflection, year):
+        """ Initialise ProgrammingLanguage instance"""
         self.name = name
         self.typing = typing
         self.reflection = reflection
@@ -15,4 +16,5 @@ class ProgrammingLanguage:
         return self.typing == "Dynamic"
 
     def __str__(self):
+        """ Return formatted string when printing object """
         return f"{self.name}, {self.typing}, Reflection={self.reflection}, First appeared in {self.year}"
