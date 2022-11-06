@@ -1,7 +1,7 @@
 """ CP1404 Practical
 Program to load and save a data file and use a list of Project objects.
 Estimated time: 30m
-Actual time:
+Actual time: 1h 30m
 """
 from project import Project
 from datetime import datetime
@@ -19,6 +19,7 @@ PROJECTS_FILE = "projects.txt"
 
 
 def main():
+    """ Menu-driven UI to load, save and use a list of Project objects"""
     projects = load_projects(PROJECTS_FILE)
     choice = input(MENU).lower()
     while choice != "q":
@@ -42,6 +43,7 @@ def main():
 
 
 def load_projects(projects_file):
+    """ Load projects from a file into memory with the correct variable types"""
     projects = []
     with open(projects_file) as in_file:
         # Consume CSV header
@@ -58,6 +60,7 @@ def load_projects(projects_file):
 
 
 def save_projects(projects, projects_file):
+    """ Save list of objects into a file"""
     with open(projects_file, "w") as out_file:
         for project in projects:
             print(project.name, project.start_date, project.priority,
@@ -65,6 +68,7 @@ def save_projects(projects, projects_file):
 
 
 def display_projects(projects):
+    """ Display a list of incomplete and completed projects"""
     completed_projects = sorted([project for project in projects if project.completion_percentage == 100])
     incomplete_projects = sorted(list(set(projects) - set(completed_projects)))
     print("Incomplete projects:")
@@ -74,6 +78,7 @@ def display_projects(projects):
 
 
 def filter_projects(projects):
+    """ Display projects with start dates after a specified date"""
     chosen_date = datetime.strptime(input("Show projects that start after date (dd/mm/yy): "), "%d/%m/%Y").date()
     filtered_projects = [project for project in projects if project.start_date >= chosen_date]
     filtered_projects.sort(key=attrgetter('start_date'))
@@ -81,6 +86,7 @@ def filter_projects(projects):
 
 
 def update_project(projects):
+    """ Update a Project's percentage and priority"""
     [print(i, project) for i, project in enumerate(projects)]
     choice = int(input("Project choice: "))
     print(projects[choice])
@@ -93,6 +99,7 @@ def update_project(projects):
 
 
 def add_project(projects):
+    """ Add a new project to memory"""
     print("Let's add a new project")
     projects.append(Project(input("Name: "),
                             datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date(),
