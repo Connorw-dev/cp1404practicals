@@ -5,6 +5,7 @@ Actual time:
 """
 from project import Project
 from datetime import datetime
+from operator import attrgetter
 
 MENU = """- (L)oad projects  
 - (S)ave projects  
@@ -36,6 +37,7 @@ def main():
         elif choice == "u":
             update_project(projects)
         choice = input(MENU).lower()
+    save_projects(projects, PROJECTS_FILE)
     print("Thank you for using custom-built project management software.")
 
 
@@ -63,18 +65,18 @@ def save_projects(projects, projects_file):
 
 
 def display_projects(projects):
-    completed_projects = [project for project in projects if project.completion_percentage == 100]
-    incomplete_projects = list(set(projects) - set(completed_projects))
+    completed_projects = sorted([project for project in projects if project.completion_percentage == 100])
+    incomplete_projects = sorted(list(set(projects) - set(completed_projects)))
     print("Incomplete projects:")
-    [print(project, end="\n") for project in incomplete_projects]
+    [print(f"  {project}", end="\n") for project in incomplete_projects]
     print("Completed projects:")
-    [print(project, end="\n") for project in completed_projects]
+    [print(f"  {project}", end="\n") for project in completed_projects]
 
 
 def filter_projects(projects):
     chosen_date = datetime.strptime(input("Show projects that start after date (dd/mm/yy): "), "%d/%m/%Y").date()
-    filtered_projects = [project for project in projects if project.start_date > chosen_date]
-    filtered_projects.sort()
+    filtered_projects = [project for project in projects if project.start_date >= chosen_date]
+    filtered_projects.sort(key=attrgetter('start_date'))
     [print(project) for project in filtered_projects]
 
 
@@ -82,12 +84,12 @@ def update_project(projects):
     [print(i, project) for i, project in enumerate(projects)]
     choice = int(input("Project choice: "))
     print(projects[choice])
-    new_percentage = int(input("New Percentage: "))
-    new_priority = int(input("New Priority: "))
+    new_percentage = input("New Percentage: ")
+    new_priority = input("New Priority: ")
     if new_percentage:
-        projects[choice].completion_percentage = new_percentage
+        projects[choice].completion_percentage = int(new_percentage)
     if new_priority:
-        projects[choice].priority = new_priority
+        projects[choice].priority = int(new_priority)
 
 
 def add_project(projects):
