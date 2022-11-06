@@ -29,7 +29,7 @@ def main():
         elif choice == "a":
             add_project(projects)
         elif choice == "u":
-            update_project(project)
+            update_project(projects)
         choice = input(MENU).lower()
     return
 
@@ -66,6 +66,15 @@ def display_projects(projects):
     [print(project, end="\n") for project in incomplete_projects]
     print("Completed projects:")
     [print(project, end="\n") for project in completed_projects]
+
+
+def update_project(projects):
+    [print(i, project) for i, project in enumerate(projects)]
+    choice = int(input("Project choice: "))
+    print(projects[choice])
+    projects[choice].completion_percentage = int(input("New Percentage: "))
+    projects[choice].priority = int(input("New Priority: "))
+
 
 if __name__ == "__main__":
     main()
