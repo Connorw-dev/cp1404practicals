@@ -20,7 +20,7 @@ def load_guitars(guitar_file):
     guitars = []
     with open(guitar_file) as in_file:
         for line in in_file:
-            parts = line.strip().split(',')
+            parts: list = line.strip().split(',')
             parts[1] = int(parts[1])  # Convert year to int
             parts[2] = float(parts[2])  # Convert price to float
             guitars.append(Guitar(*parts))
