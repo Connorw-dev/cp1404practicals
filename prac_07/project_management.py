@@ -68,12 +68,18 @@ def display_projects(projects):
     [print(project, end="\n") for project in completed_projects]
 
 
+def filter_projects(projects):
+
 def update_project(projects):
     [print(i, project) for i, project in enumerate(projects)]
     choice = int(input("Project choice: "))
     print(projects[choice])
-    projects[choice].completion_percentage = int(input("New Percentage: "))
-    projects[choice].priority = int(input("New Priority: "))
+    new_percentage = int(input("New Percentage: "))
+    new_priority = int(input("New Priority: "))
+    if new_percentage:
+        projects[choice].completion_percentage = new_percentage
+    if new_priority:
+        projects[choice].priority = new_priority
 
 
 def add_project(projects):
