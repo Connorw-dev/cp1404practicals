@@ -23,3 +23,7 @@ class Project:
     def __lt__(self, other):
         """Return less than method for Project"""
         return self.priority < other.priority
+
+    def is_complete(self):
+        """ Determines if project is completed"""
+        return self.completion_percentage == 100

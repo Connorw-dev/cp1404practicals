@@ -51,10 +51,13 @@ def load_projects(projects_file):
 
         for line in in_file:
             parts = line.strip().split('\t')  # TAB delimiter
+
+            # Convert parts to correct variable type
             start_date = datetime.strptime(parts[1], "%d/%m/%Y").date()
             priority = int(parts[2])
             cost_estimate = float(parts[3])
             completion_percentage = int(parts[4])
+
             projects.append(Project(parts[0], start_date, priority, cost_estimate, completion_percentage))
     return projects
 
@@ -69,7 +72,7 @@ def save_projects(projects, projects_file):
 
 def display_projects(projects):
     """ Display a list of incomplete and completed projects"""
-    completed_projects = sorted([project for project in projects if project.completion_percentage == 100])
+    completed_projects = sorted([project for project in projects if project.is_complete()])
     incomplete_projects = sorted(list(set(projects) - set(completed_projects)))
     print("Incomplete projects:")
     [print(f"  {project}", end="\n") for project in incomplete_projects]
