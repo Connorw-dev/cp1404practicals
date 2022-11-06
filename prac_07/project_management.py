@@ -14,15 +14,19 @@ MENU = """- (L)oad projects
 - (U)pdate project
 - (Q)uit
 >>> """
+PROJECTS_FILE = "projects.txt"
 
 
 def main():
+    projects = load_projects(PROJECTS_FILE)
     choice = input(MENU).lower()
     while choice != "q":
         if choice == "l":
-            projects = load_projects()
+            projects_file = input("Projects filename: ")
+            projects = load_projects(projects_file)
         elif choice == "s":
-            save_projects(projects)
+            projects_file = input("Projects filename: ")
+            save_projects(projects, projects_file)
         elif choice == "d":
             display_projects(projects)
         elif choice == "f":
@@ -35,9 +39,8 @@ def main():
     print("Thank you for using custom-built project management software.")
 
 
-def load_projects():
+def load_projects(projects_file):
     projects = []
-    projects_file = input("Projects filename: ")
     with open(projects_file) as in_file:
         # Consume CSV header
         in_file.readline()
@@ -52,8 +55,7 @@ def load_projects():
     return projects
 
 
-def save_projects(projects):
-    projects_file = input("Projects filename: ")
+def save_projects(projects, projects_file):
     with open(projects_file, "w") as out_file:
         for project in projects:
             print(project.name, project.start_date, project.priority,
