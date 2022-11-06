@@ -76,5 +76,14 @@ def update_project(projects):
     projects[choice].priority = int(input("New Priority: "))
 
 
+def add_project(projects):
+    print("Let's add a new project")
+    projects.append(Project(input("Name: "),
+                            input("Start date (dd/mm/yy): "),
+                            int(input("Priority: ")),
+                            float(input("Cost estimate: $")),
+                            int(input("Percent complete: "))))
+
+
 if __name__ == "__main__":
     main()
