@@ -4,6 +4,7 @@ Estimated time: 30m
 Actual time:
 """
 from project import Project
+from datetime import datetime
 
 MENU = """- (L)oad projects  
 - (S)ave projects  
@@ -31,7 +32,7 @@ def main():
         elif choice == "u":
             update_project(projects)
         choice = input(MENU).lower()
-    return
+    print("Thank you for using custom-built project management software.")
 
 
 def load_projects():
@@ -43,7 +44,7 @@ def load_projects():
 
         for line in in_file:
             parts = line.strip().split('\t')  # TAB delimiter
-            start_date = parts[1]
+            start_date = datetime.strptime(parts[1], "%d/%m/%Y").date()
             priority = int(parts[2])
             cost_estimate = float(parts[3])
             completion_percentage = int(parts[4])
@@ -69,6 +70,11 @@ def display_projects(projects):
 
 
 def filter_projects(projects):
+    chosen_date = datetime.strptime(input("Show projects that start after date (dd/mm/yy): "), "%d/%m/%Y").date()
+    filtered_projects = [project for project in projects if project.start_date > chosen_date]
+    filtered_projects.sort()
+    [print(project) for project in filtered_projects]
+
 
 def update_project(projects):
     [print(i, project) for i, project in enumerate(projects)]
@@ -85,7 +91,7 @@ def update_project(projects):
 def add_project(projects):
     print("Let's add a new project")
     projects.append(Project(input("Name: "),
-                            input("Start date (dd/mm/yy): "),
+                            datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date(),
                             int(input("Priority: ")),
                             float(input("Cost estimate: $")),
                             int(input("Percent complete: "))))

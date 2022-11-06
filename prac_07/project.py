@@ -2,7 +2,7 @@
 CP1404/CP5632 Practical
 Project class
 """
-
+from datetime import datetime
 
 class Project:
     """Represent information about a Project."""
@@ -15,5 +15,8 @@ class Project:
         self.completion_percentage = completion_percentage
 
     def __str__(self):
-        return f"{self.name}, start: {self.start_date}," \
-               f" priority {self.priority}, estimate: ${self.cost_estimate}, completion: {self.completion_percentage}%"
+        return f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, " \
+               f"priority {self.priority}, estimate: ${self.cost_estimate}, completion: {self.completion_percentage}%"
+
+    def __lt__(self, other):
+        return self.start_date < other.start_date
