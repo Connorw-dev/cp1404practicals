@@ -91,14 +91,14 @@ def filter_projects(projects):
 def update_project(projects):
     """ Update a Project's percentage and priority"""
     [print(i, project) for i, project in enumerate(projects)]
-    choice = int(input("Project choice: "))
-    print(projects[choice])
+    index = int(input("Project choice: "))
+    print(projects[index])
     new_percentage = input("New Percentage: ")
     new_priority = input("New Priority: ")
     if new_percentage:
-        projects[choice].completion_percentage = int(new_percentage)
+        projects[index].completion_percentage = int(new_percentage)
     if new_priority:
-        projects[choice].priority = int(new_priority)
+        projects[index].priority = int(new_priority)
 
 
 def add_project(projects):
