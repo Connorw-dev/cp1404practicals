@@ -28,7 +28,7 @@ class DynamicLabelsApp(App):
         return self.root
 
     def create_labels(self):
-        """Create buttons from dictionary entries and add them to the GUI."""
+        """Create labels from dictionary entries and add them to the GUI."""
         [self.root.ids.main.add_widget(Label(text=name)) for name in self.names]
 
 
