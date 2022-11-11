@@ -16,6 +16,10 @@ class Guitar:
         """ Return formatted string when printing object """
         return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
+    def __lt__(self, other):
+        """ Return less-than method for Guitar"""
+        return self.year < other.year
+
     def get_age(self):
         """ Return age of guitar"""
         return datetime.date.today().year - self.year
