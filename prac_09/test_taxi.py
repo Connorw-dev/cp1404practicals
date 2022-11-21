@@ -1,4 +1,4 @@
-""" CP1404 Practical 9 - Inheritance """
+""" CP1404 Practical 9 - Test Taxi class """
 from taxi import Taxi
 
 my_taxi = Taxi("Prius 1", 100)
