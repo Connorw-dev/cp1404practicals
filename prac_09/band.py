@@ -1,5 +1,5 @@
 """Practical 9 -  Band class"""
-from prac_09.musician import Musician
+
 
 class Band:
     """Represent a Band object."""
@@ -16,7 +16,6 @@ class Band:
     def add(self, musician):
         """Add a musician to the band."""
         self.musicians.append(musician)
-
 
     def play(self):
         """All musicians play instrument on seperate lines. Ignore the None"""

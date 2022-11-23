@@ -1,4 +1,4 @@
-""" CP1404 Practical 9 - Test SilverServiceTaxi class """
+"""CP1404 Practical 9 - Test SilverServiceTaxi class """
 from silver_service_taxi import SilverServiceTaxi
 
 my_taxi = SilverServiceTaxi("Toyota", 100, 2)
