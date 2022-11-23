@@ -2,7 +2,8 @@
 from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
 
-MENU = "q)uit, c)hoose taxi, d)rive"
+MENU = """q)uit, c)hoose taxi, d)rive
+>>> """
 
 
 def main():
@@ -11,29 +12,32 @@ def main():
     current_taxi = None
     bill = 0
     print("Let's drive!")
-    print(MENU)
-    menu_choice = input(">>> ").lower()
+    menu_choice = input(MENU).lower()
     while menu_choice != "q":
         if menu_choice == "c":
             print("Taxis available:")
             display_taxis(taxis)
-            taxi_choice = int(input("Choose taxi: "))
-            current_taxi = taxis[taxi_choice]
+
+            # Get taxi choice. Go back to menu if invalid
+            try:
+                taxi_choice = int(input("Choose taxi: "))
+                current_taxi = taxis[taxi_choice-1]
+            except (ValueError, IndexError):
+                print("Invalid taxi choice")
+
         elif menu_choice == "d":
             if current_taxi is None:
                 print("You need to choose a taxi before you can drive")
             else:
                 current_taxi.start_fare()
-                distance_to_drive = int(input("Drive how far? "))
-                current_taxi.drive(distance_to_drive)
+                current_taxi.drive(int(input("Drive how far? ")))
                 trip_cost = current_taxi.get_fare()
                 print("Your {} trip cost you ${:.2f}".format(current_taxi.name, trip_cost))
                 bill += trip_cost
         else:
             print("Invalid option")
         print("Bill to date: ${:.2f}".format(bill))
-        print(MENU)
-        menu_choice = input(">>> ").lower()
+        menu_choice = input(MENU).lower()
     print("Total trip cost: ${:.2f}".format(bill))
     print("Taxis are now:")
     display_taxis(taxis)
@@ -41,7 +45,7 @@ def main():
 
 def display_taxis(taxis):
     """Display list of taxis."""
-    [print(f"{i} - {taxi}") for i, taxi in enumerate(taxis)]
+    [print(f"{i} - {taxi}") for i, taxi in enumerate(taxis, 1)]
 
 
 if __name__ == '__main__':
